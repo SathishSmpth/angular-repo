@@ -23,6 +23,7 @@ import { MoviesModule } from './modules/movies/movies.module';
 import { UserModule } from './modules/user/user.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './services/auth_interceptor.service';
+import { ExampleComponent } from './example/example.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { AuthInterceptorService } from './services/auth_interceptor.service';
     LoginComponent,
     AccountComponent,
     NewAccountComponent,
+    ExampleComponent,
   ],
   imports: [
     BrowserModule,
