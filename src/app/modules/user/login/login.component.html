@@ -1,0 +1,11 @@
+<div *ngIf="isLoading">
+  <div class="my-4 text-center">
+    <app-loader></app-loader>
+  </div>
+</div>
+<div *ngIf="!isLoading">
+  <app-user-form
+    (handleSubmit)="handleSubmit()"
+    [error]="error"
+  ></app-user-form>
+</div>

@@ -1,0 +1,16 @@
+<div class="col">
+  <div class="card">
+    <img
+      src="{{ image }}"
+      (error)="defaultImage()"
+      class="card-img-top"
+      alt="..."
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ movie.title | titlecase }}</h5>
+      <p class="card-text">{{ movie.overview | shorten : 30 }}</p>
+      <p class="card-text">{{ movie.release_date | date }}</p>
+      <a (click)="watchNow(movie)" class="btn btn-dark rounded-0">Watch or More Details</a>
+    </div>
+  </div>
+</div>

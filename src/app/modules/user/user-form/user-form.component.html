@@ -1,0 +1,73 @@
+<div class="col-8 col-lg-5 mt-5 mx-auto">
+  <div class="card border-0 shadow">
+    <div class="card-body">
+      <form class="row g-3" [formGroup]="userData" (ngSubmit)="onSubmit()">
+        <div class="col-12">
+          <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
+        </div>
+        <div class="col-12">
+          <div class="form-floating">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              placeholder="Email"
+              aria-describedby="emailHelp"
+            />
+            <label for="email" class="form-label">Email address</label>
+            <div
+              *ngIf="
+                userData.get('email')?.invalid && userData.get('email')?.touched
+              "
+            >
+              <span
+                class="form-text text-danger"
+                *ngIf="userData.get('email')?.errors?.['required']"
+                >Enter your email!</span
+              >
+              <span
+                class="form-text text-danger"
+                *ngIf="userData.get('email')?.errors?.['email']"
+                >Enter a valid email!</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-floating">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              formControlName="password"
+              placeholder="Password"
+            />
+            <label for="password" class="form-label">Password</label>
+            <div
+              *ngIf="
+                userData.get('password')?.invalid &&
+                userData.get('password')?.touched
+              "
+            >
+              <span
+                class="form-text text-danger"
+                *ngIf="userData.get('password')?.errors?.['required']"
+                >Enter your password!</span
+              >
+              <span
+                class="form-text text-danger"
+                *ngIf="userData.get('password')?.errors?.['pattern']"
+                >Password must be 6-20 characters long, contain letters and one
+                uppercase, numbers and special characters</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary px-5">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card border-0 shadow mt-4 col-6 mx-auto">
+  <div class="card-body">
+    <form [formGroup]="newAccount" class="row g-2">
+      <div class="form-group col-12">
+        <label>Account Name</label>
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+      <div class="form-group col-12">
+        <select class="form-control" formControlName="status">
+          <option value="active">Active</option>
+          <option value="inactive">Inactive</option>
+          <option value="hidden">Hidden</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary px-5" (click)="onCreate()">
+          Add New Account
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

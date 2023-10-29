@@ -1,0 +1,33 @@
+<h1 class="new">{{ title + "This is Also string interpolation" }}</h1>
+
+<h1 [innerText]="propertyBinding"></h1>
+<p>
+  <button [disabled]="btnState" [ngClass]="classes" [style.border]="btnStyle">
+    {{ btnState ? "This is Disabled" : "This is Enabled" }}
+  </button>
+</p>
+<div *ngIf="btnState else enable">Button is disabled</div>
+<ng-template #enable>
+  Button is Enabled
+</ng-template>
+<div>
+  <input type="text" (input)="getInputValue($event)" />
+  <p>
+    {{ inputValue }}
+  </p>
+</div>
+<ul>
+  <li *ngFor="let name of names">{{name}}</li>
+</ul>
+<div [ngSwitch]="number">
+  <div *ngSwitchCase="1">Give number is one</div>
+  <div *ngSwitchCase="2">Give number is two</div>
+  <div *ngSwitchCase="3">Give number is three</div>
+  <div *ngSwitchDefault>Out of range</div>
+</div>
+<div> 
+  <input type="text" [(ngModel)]="inputValue" />
+  <p>
+    {{ inputValue }}
+  </p>
+</div>
